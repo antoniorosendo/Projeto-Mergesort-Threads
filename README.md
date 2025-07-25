@@ -1,14 +1,12 @@
-# Projeto Prático: Mesclagem e Ordenação Paralela de Arquivos com Threads
+# Projeto: Mesclagem e Ordenação Paralela de Arquivos com Threads
 
 ## Visão Geral do Projeto
+Este projeto prático da disciplina de Sistemas Operacionais (TT304A) da UNICAMP - FT, implementa uma solução eficiente para o problema de mesclagem e ordenação de múltiplos arquivos de entrada contendo valores inteiros desordenados em um único arquivo de saída ordenado. A aplicação utiliza paralelismo com threads para otimizar o desempenho do processamento de dados.
 
-[cite_start]Este projeto prático da disciplina de Sistemas Operacionais (TT304A) da UNICAMP - FT, implementa uma solução eficiente para o problema de mesclagem e ordenação de múltiplos arquivos de entrada contendo valores inteiros desordenados em um único arquivo de saída ordenado[cite: 10, 38]. [cite_start]A aplicação utiliza paralelismo com threads para otimizar o desempenho do processamento de dados[cite: 12, 38].
-
-[cite_start]O programa é capaz de trabalhar com um número específico de threads (1, 2, 4 ou 8), onde cada thread é responsável por ler e ordenar os dados de um arquivo de entrada[cite: 13, 12]. [cite_start]O algoritmo de ordenação utilizado em cada thread é o Mergesort, e os resultados parciais são então mesclados para gerar o arquivo de saída final ordenado.
+O programa é capaz de trabalhar com um número específico de threads (1, 2, 4 ou 8), onde cada thread é responsável por ler e ordenar os dados de um arquivo de entrada. O algoritmo de ordenação utilizado em cada thread é o Mergesort, e os resultados parciais são então mesclados para gerar o arquivo de saída final ordenado.
 
 ## Como Compilar e Executar
-
-[cite_start]Para compilar e executar o programa em sistemas Linux, siga os comandos abaixo, utilizando o `makefile` fornecido para padronizar o processo[cite: 15].
+Para compilar e executar o programa em sistemas Linux, siga os comandos abaixo, utilizando o `makefile` fornecido para padronizar o processo.
 
 ### Pré-requisitos
 Certifique-se de ter o `gcc` e as bibliotecas `pthread` instaladas em seu ambiente Linux.
@@ -16,7 +14,6 @@ Certifique-se de ter o `gcc` e as bibliotecas `pthread` instaladas em seu ambien
 ### Compilação
 Utilize o comando `make` para compilar o programa. [cite_start]Isso executará a linha de comando padrão definida no `makefile`: `gcc -o mergesort mergesort.c -Ipthread`[cite: 16].
 
-```bash
 Após a compilação, um executável chamado mergesort será gerado.
 
 Execução
