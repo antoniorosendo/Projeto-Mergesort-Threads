@@ -37,6 +37,8 @@ Os testes de desempenho mostraram que a utilização de threads pode otimizar si
 
 Conforme o gráfico de "Tempo de Execução x Número de Threads":
 
+<img width="967" height="601" alt="image" src="https://github.com/user-attachments/assets/4e7c0b0c-e880-414b-8070-48465e1168d5" />
+
 - 2 threads ofereceram o melhor desempenho, pois as tarefas foram divididas de forma equilibrada com menor sobrecarga de gerenciamento.
 - Com 4 e 8 threads, o tempo de execução aumentou. Isso ocorreu porque o número de threads excedeu o número de arquivos de entrada utilizados nos testes (3 arquivos), resultando em threads ociosas e sobrecarga desnecessária na gerência.
 - A medição do tempo de execução de cada thread e do tempo total do programa é fundamental para avaliar o desempenho e identificar gargalos. A conclusão principal é que o número de threads deve ser ajustado ao número de arquivos de entrada para otimizar o desempenho geral do sistema.
