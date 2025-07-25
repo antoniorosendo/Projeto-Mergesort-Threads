@@ -1,0 +1,105 @@
+# Projeto Prático: Mesclagem e Ordenação Paralela de Arquivos com Threads
+
+## Visão Geral do Projeto
+
+[cite_start]Este projeto prático da disciplina de Sistemas Operacionais (TT304A) da UNICAMP - FT, implementa uma solução eficiente para o problema de mesclagem e ordenação de múltiplos arquivos de entrada contendo valores inteiros desordenados em um único arquivo de saída ordenado[cite: 10, 38]. [cite_start]A aplicação utiliza paralelismo com threads para otimizar o desempenho do processamento de dados[cite: 12, 38].
+
+[cite_start]O programa é capaz de trabalhar com um número específico de threads (1, 2, 4 ou 8), onde cada thread é responsável por ler e ordenar os dados de um arquivo de entrada[cite: 13, 12]. [cite_start]O algoritmo de ordenação utilizado em cada thread é o Mergesort, e os resultados parciais são então mesclados para gerar o arquivo de saída final ordenado.
+
+## Como Compilar e Executar
+
+[cite_start]Para compilar e executar o programa em sistemas Linux, siga os comandos abaixo, utilizando o `makefile` fornecido para padronizar o processo[cite: 15].
+
+### Pré-requisitos
+Certifique-se de ter o `gcc` e as bibliotecas `pthread` instaladas em seu ambiente Linux.
+
+### Compilação
+Utilize o comando `make` para compilar o programa. [cite_start]Isso executará a linha de comando padrão definida no `makefile`: `gcc -o mergesort mergesort.c -Ipthread`[cite: 16].
+
+```bash
+Após a compilação, um executável chamado mergesort será gerado.
+
+Execução
+O programa aceita como argumento o número de threads desejado (1, 2, 4 ou 8) e uma lista de arquivos de entrada 
+
+.dat, além da opção -o seguida do nome do arquivo de saída.
+
+
+Para facilitar a execução com diferentes configurações de threads, o 
+
+makefile já possui comandos pré-definidos que utilizam 3 arquivos de entrada (arq1.dat, arq2.dat, arq3.dat).
+
+
+Para executar o programa com um número específico de threads, utilize:
+
+Bash
+
+make <num_threads>
+Exemplos:
+
+
+Execução com 1 thread: 
+
+Bash
+
+make 1
+# Equivalente a: ./mergesort 1 arq1.dat arq2.dat arq3.dat -o saida.dat
+
+Execução com 2 threads: 
+
+Bash
+
+make 2
+# Equivalente a: ./mergesort 2 arq1.dat arq2.dat arq3.dat -o saida.dat
+
+Execução com 4 threads: 
+
+Bash
+
+make 4
+# Equivalente a: ./mergesort 4 arq1.dat arq2.dat arq3.dat -o saida.dat
+
+Execução com 8 threads: 
+
+Bash
+
+make 8
+# Equivalente a: ./mergesort 8 arq1.dat arq2.dat arq3.dat -o saida.dat
+
+Observação sobre arquivos de entrada: Embora os comandos do makefile estejam configurados para 3 arquivos de entrada, o programa é capaz de processar até 8 arquivos de entrada.
+
+Resultados e Análise de Desempenho
+Os testes de desempenho mostraram que a utilização de threads pode otimizar significativamente o tempo de execução, dependendo do balanceamento de carga e da sobrecarga de gerenciamento de threads.
+
+Conforme o gráfico de "Tempo de Execução x Número de Threads":
+
+
+2 threads ofereceram o melhor desempenho, pois as tarefas foram divididas de forma equilibrada com menor sobrecarga de gerenciamento.
+
+Com 4 e 8 threads, o tempo de execução aumentou. Isso ocorreu porque o número de threads excedeu o número de arquivos de entrada utilizados nos testes (3 arquivos), resultando em threads ociosas e sobrecarga desnecessária na gerência.
+
+A medição do tempo de execução de cada thread e do tempo total do programa é fundamental para avaliar o desempenho e identificar gargalos. A conclusão principal é que o número de threads deve ser ajustado ao número de arquivos de entrada para otimizar o desempenho geral do sistema.
+
+
+
+Conclusões
+Este projeto demonstra uma aplicação prática de conceitos de concorrência e paralelismo para o processamento de dados. A combinação do algoritmo Mergesort com a paralelização por threads prova ser uma solução eficiente para lidar com grandes volumes de dados desordenados, transformando-os em um único arquivo ordenado. A capacidade de otimização através do ajuste do número de threads conforme a carga de trabalho é um ponto chave desta implementação.
+
+
+
+Alunos
+Antonio Carlos Rosendo da Silva - RA 174258 
+
+Eduardo Castro Brito - RA 281409 
+
+Professor
+Prof. André Leon S. Gradvohl, Dr. 
+
+Instituição
+Universidade Estadual de Campinas - UNICAMP 
+
+Faculdade de Tecnologia - FT 
+
+
+Link do Vídeo (Opcional)
+[https://www.youtube.com/watch?v=EiMWwXNIDb8&ab_channel=Antonio Carlos RosendoDaSilva](https://www.youtube.com/watch?v=EiMWwXNIDb8&ab_channel=Antonio Carlos RosendoDaSilva) 
